@@ -1,0 +1,40 @@
+.main {
+    position: relative;
+    box-sizing: border-box;
+    padding: 50px 0;
+    background-color: rgb(63, 56, 56);
+}
+
+
+.main-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1 200px;
+}
+.main-image img {
+    width: 250px;
+    box-shadow:0 0 20px white;
+    border-radius: 20px;
+    transform: translate(0, 0);
+    transition: all .4s;
+}
+.main-image img:hover {
+    box-shadow: 10px 10px 20px rgb(253, 205, 168);
+    transform: translate(-10px, -10px);
+
+}
+
+.main-desc {
+    width: 40%;
+    background-color: rgb(195, 141, 141);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow:0 0 20px white;
+    transform: translate(0, 0);
+    transition: all .4s;
+}
+.main-desc:hover {
+    box-shadow: 10px 10px 20px rgb(253, 205, 168);
+    transform: translate(-10px, -10px);
+}

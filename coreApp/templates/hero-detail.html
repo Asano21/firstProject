@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{hero.name}}{% endblock %}
+{% block content %}
+<div class="container my-5">
+    <div class="card" style="width: 100%;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{{hero.characteImage}}" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h2 class="card-title">{{hero.name}} - {{hero.characterAge}} year</h2>
+                    <p class="card-text">{{hero.characterDesc}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

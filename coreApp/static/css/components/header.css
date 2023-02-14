@@ -1,0 +1,134 @@
+.header {
+    background-color: rgb(106, 96, 96);
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo img {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: all 350ms;
+}
+
+.logo img:hover {
+    transform: rotate(360deg);
+}
+
+.menu {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 3px 7px 3px rgba(0, 0, 0, 0.19);
+    padding: 5px;
+    border-radius: 20px;
+    height: 43px;
+}
+
+.menu-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.menu-list > li {
+    font-size: 20px;
+    margin: 0 30px 0 10px;
+    transform: scale(.8);
+    transition: all .3s ease;
+}
+
+.menu-list > li:hover {
+    transform: scale(1);
+}
+.menu-list > li a {
+    color: black;
+    border-radius: 20px;
+    padding: 3px 7px;
+    background-color: none;
+    transition: all .3s;
+}
+.menu-list > li a:hover {
+    color: white;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 5px 10px black;
+}
+
+
+.mobile-menu {
+    display: none;
+    position: relative;
+}
+
+.mobile-list {
+    position: relative;
+    right: 160px;
+    background-color: white;
+    border-radius: 4px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -7px 9px 17px 0px #00000017;
+}
+.mobile-list > li a {
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    transition: color .4s;
+}
+.mobile-list > li:hover a {
+    color: rgb(255, 8, 0);
+}
+.mobile-menu-inside {
+    position: relative;
+}
+.icon {
+    position: absolute;
+    top: 50%;
+    right: 100px;
+    transform: translateY(-50%);
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    background-image: url(../../media/openBar.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    cursor: pointer;
+    box-shadow: 0px 0px 17px 0px #00000017;
+    transition: 0.5s ease transform;
+}
+.icon.close {
+    transform: translateY(-50%) rotate(360deg);
+    background-image: url(../../media/closeBar.png);
+}
+.mobile-list {
+    width: 0px;
+    overflow: hidden;
+    transform: translateX(50px);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s ease;
+    padding: 5px;
+    margin-top: 15px;
+}
+.mobile-menu-inside.show .mobile-list {
+    width: 300px;
+    transform: translate(0px);
+    opacity: 1;
+    pointer-events: all;
+}
+@media screen and (max-width: 768px) {
+    .mobile-menu {
+        display: block;
+    }
+    .menu {
+        display: none;
+    }
+}

@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Home Page {% endblock %}
+{% block content %}
+
+    <section class="main">
+        <div class="container" id="home">
+            <div class="main-wrapper">
+                <div class="main-image">
+                    {% load static %} <img src="{% static './media/touma3.jpg' %}" alt="touma">
+                </div>
+                <div class="main-desc">
+                    <h2>Kamijou Touma</h2>
+                    <hr>
+                    <p>
+                        Камидзё Тома (上条 当麻 Kamijō Tōma?) — главный протагонист Toaru Majutsu no Index и эпизодический герой в Toaru Kagaku no Railgun. Чаще встречается в событиях магической стороны. Эспер нулевого уровня Академ-Сити, в начале основных событий учился в средней школе.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="news">
+        <div class="container" id="news">
+            <div class="news-wrapper">
+<!--                {% for post in posts %}-->
+<!--                <div class="news-inside">-->
+<!--                    <div class="news-image">-->
+<!--                        <img src="{{post.postImage}}" class="float-start" alt="image">-->
+<!--                    </div>-->
+<!--                    <div class="text-wrapper">-->
+<!--                        <h1 class="text-title">{{post.title}}</h1>-->
+<!--                        <p class="text-desc">-->
+<!--                            {{post.postContent}}-->
+<!--                        </p>-->
+<!--                        <h3 class="text-date">{{post.postDate}}</h3>-->
+<!--                        <a href="{% url 'postDetail' pk=post.pk %}" class="btn btn-light">HAHAHA</a>-->
+
+
+<!--                    </div>-->
+<!--                </div>-->
+<!--                {% endfor %}-->
+                {% for post in posts %}
+                <div data-aos="fade-up">
+                <div class="card mb-3 bg-info" style="width: 100%;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="{{post.postImage}}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">{{post.title}}</h5>
+                        <p class="card-text">{{post.postContent}}</p>
+                        <p class="card-text"><small class="text-muted">{{post.postDate}}</small></p>
+                        <a href="{% url 'postDetail' pk=post.pk %}" class="btn btn-light">Read</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-wrapper">
+                <div class="footer-logo">
+                    <a href="#home"><img style="width:100px;" src="{% static './media/logo.png'  %}" alt="logo"></a>
+                </div>
+                <div class="footer-account d-flex justify-content-evenly">
+                    <a target="_blank" href="https://www.instagram.com/cristiano/"><img src="https://cdn-icons-png.flaticon.com/512/87/87390.png" width="20px"> Instragram</a>
+                    <a target="_blank" href="https://www.youtube.com/watch?v=xqFTe96OWPU"><img src="https://cdn-icons-png.flaticon.com/512/152/152810.png" width="20px">  Youtube</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}
+

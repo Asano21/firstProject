@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %} Hero Site {% endblock %}
+{% block content %} 
+<div class="container">
+    <div class="d-flex">
+        {% for hero in heroes %}
+        <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <div class="card m-4" style="width: 18rem;">
+          <img src="{{hero.characteImage}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h2 class="card-title">{{hero.name}} - {{hero.characterAge}} year</h2>
+            <a href="{% url 'heroDetail' pk=hero.pk %}" class="btn btn-dark">Read</a>
+          </div>
+        </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
